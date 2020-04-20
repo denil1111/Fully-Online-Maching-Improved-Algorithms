@@ -8,7 +8,7 @@ function lpBalancedRanking(n)
     # set step size
     step = 1//n
 
-    #initial variables
+    # initial variables
     @variable(lpRatio, ratio >= 0)
     @objective(lpRatio, Max, ratio)
     @variable(lpRatio, g[0:step:1] >= 0)
