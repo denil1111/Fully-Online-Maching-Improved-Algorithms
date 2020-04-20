@@ -9,7 +9,7 @@ include("balancedRanking.jl")
 lpBalancedRanking( n = 20 )
 ```
 Output the optimized ratio for balnced ranking with n=20.
-### lpEagerWaterFilling
+### lpEagerWaterFilling in eagerWaterFilling.jl
 ``` 
 include("eagerWaterFilling.jl")
 lpEagerWaterFilling( n = 20 )
