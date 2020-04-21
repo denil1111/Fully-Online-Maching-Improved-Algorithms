@@ -1,5 +1,5 @@
 # Fully-Online-Maching-Improved-Algorithms
-We provide the two function to optimzie the competitive ratio for balanced ranking and eager water-filling written in Julia.
+We provide functions to solve the LPs which optimzie the competitive ratio of balanced ranking and eager water-filling written in Julia.
 - balancedRanking.jl
 - eagerWaterFilling.jl
 ## API
