@@ -1,17 +1,17 @@
 # Fully-Online-Maching-Improved-Algorithms
-We provide functions to solve the LPs which optimzie the competitive ratio of balanced ranking and eager water-filling written in Julia.
+We support functions to solve the LPs which optimzie the competitive ratio of balanced ranking and eager water-filling written in Julia.
 - balancedRanking.jl
 - eagerWaterFilling.jl
-## API
-### lpBalancedRanking in balancedRanking.jl
+## balancedRanking.jl
+The script provides a function to optimize the competitive ratio of balanced ranking with a size n LP. This is an example to load the script and run it with n = 100.
 ```
 include("balancedRanking.jl")
-lpBalancedRanking( n = 20 )
+lpBalancedRanking( n = 100 )
 ```
-Output the optimized ratio for balnced ranking with n=20.
-### lpEagerWaterFilling in eagerWaterFilling.jl
+## eagerWaterFilling.jl
+The script provides a function to optimize the competitive ratio of eager water-filling with a size n LP. This is an example to load the script and run it with n = 1000.
 ``` 
 include("eagerWaterFilling.jl")
-lpEagerWaterFilling( n = 20 )
+lpEagerWaterFilling( n = 1000 )
 ```
-Output the optimized ratio for eager water filling with n=20.
+
