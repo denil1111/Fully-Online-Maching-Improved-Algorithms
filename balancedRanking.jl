@@ -2,8 +2,8 @@ using JuMP
 using Gurobi
 using Plots
 function lpBalancedRanking(n)
-    # Set Gurobi to be the solver
-    lpRatio = Model(with_optimizer(Gurobi.Optimizer))
+    # set Gurobi to be the solver
+    lpRatio = Model(Gurobi.Optimizer)
 
     # set step size
     step = 1//n

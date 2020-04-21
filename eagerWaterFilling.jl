@@ -1,10 +1,9 @@
 using JuMP
-using Plots
 using Gurobi
 
 function lpEagerWaterFilling(n)
-    # set solver to Gurobi
-    lpRatio = Model(with_optimizer(Gurobi.Optimizer))
+    # set Gurobi to be the solver
+    lpRatio = Model(Gurobi.Optimizer)
 
     # set step size
     step = 1//n
@@ -33,18 +32,18 @@ function lpEagerWaterFilling(n)
                     sum(0.5*h[x-step]+0.5*h[x] for x=step:step:y))
     end
 
-    for i = 0:step:1
-        @constraint(lpRatio, ratio + 4*step*step <= i*h[i] - H[i] + 1-i )
+    for q = 0:step:1
+        @constraint(lpRatio, ratio + 3/4*step*step <= q*h[q] - H[q] + 1-q )
     end
 
-    for i=0:step:1
-        for j=0:step:1
-            @constraint(lpRatio, ratio + 8*step*step <= i*h[i] - H[i] + j*h[j] - H[j]
-                                        + H[1-i] + (1-h[i])*(1-j) )
+    for p=0:step:1
+        for q=0:step:1
+            @constraint(lpRatio, ratio + 8*step*step <= q*h[q] - H[q] + p*h[p] - H[p]
+                                        + H[1-q] + (1-h[q])*(1-p) )
         end
     end
 
     status = optimize!(lpRatio)
 
-    println("Objective value: ", getobjectivevalue(lpRatio))
+    println("Objective value: ", objective_value(lpRatio))
 end
