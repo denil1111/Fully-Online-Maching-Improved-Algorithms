@@ -46,4 +46,6 @@ function lpEagerWaterFilling(n)
     status = optimize!(lpRatio)
 
     println("Objective value: ", objective_value(lpRatio))
+    
+    return objective_value(lpRatio)
 end
